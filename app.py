@@ -5,18 +5,18 @@ import torch
 import ast
 from sklearn.metrics.pairwise import cosine_similarity
 
-# Load BERT model and tokenizer
+
 model_name = "bert-base-multilingual-cased"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModel.from_pretrained(model_name)
 
-# Load your dataset (Ensure this points to your preprocessed DataFrame)
+
 df = pd.read_csv('flipkart_com-ecommerce_sample.csv')
 
 ## data cleaning
 
 df=df.dropna(subset=df.columns)
-df=df.head(20)
+
 
 # Function to parse product specifications
 def parse_specifications(spec_string):
